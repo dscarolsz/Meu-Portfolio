@@ -4,7 +4,7 @@
     --cor-texto: #ffffff;
     --texto-suave: #b3b3b3;
     --cor-destaque: #404acf;
-    --cor-destaque-escuro: #3f8c2e;
+    --cor-destaque-escuro: #0b2672;
     --cor-borda: #2a2a2a;
     --fonte-principal: 'Poppins', Arial, Helvetica, sans-serif;
     --raio-padrao: 10px;
@@ -29,7 +29,7 @@ body {
     background-color: #121212; /* Fundo suave fora da área do portfólio */
 }
 
-/* ESTILIZANDO A ESTRUTURA PRINCIPAL */
+/*ESTILIZANDO A ESTRUTURA PRINCIPAL*/
 .pagina {
     max-width: 900px;
     width: 100%;
@@ -43,7 +43,7 @@ body {
     padding: 0 50px 40px 50px;
 }
 
-/* MELHORIA NOS TÍTULOS E ESPAÇAMENTOS */
+/*MELHORIA NOS TÍTULOS E ESPAÇAMENTOS*/
 h1, h2, h3 {
     color: #1a1a1a;
 }
