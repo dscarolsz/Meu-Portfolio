@@ -3,8 +3,8 @@
     --cor-fundo: #0d0d0d;
     --cor-texto: #ffffff;
     --texto-suave: #b3b3b3;
-    --cor-destaque: #404acf;
-    --cor-destaque-escuro: #0b2672;
+    --cor-destaque: #2632d4;
+    --cor-destaque-escuro: #284aa8;
     --cor-borda: #2a2a2a;
     --fonte-principal: 'Poppins', Arial, Helvetica, sans-serif;
     --raio-padrao: 10px;
@@ -26,51 +26,68 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--fonte-principal);
-    background-color: #121212; /* Fundo suave fora da área do portfólio */
+    background-color: var(--cor-fundo);
 }
 
-/*ESTILIZANDO A ESTRUTURA PRINCIPAL*/
+/*ESTRUTURA PRINCIPAL DA PÁGINA*/
 .pagina {
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: #b3b3b3;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-color: #161616; /* Tom escuro para harmonizar com o layout */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    color: var(--cor-texto);
 }
 
 .conteudo {
     padding: 0 50px 40px 50px;
 }
 
-/*MELHORIA NOS TÍTULOS E ESPAÇAMENTOS*/
+/*TIPOGRAFIA E TÍTULOS*/
 h1, h2, h3 {
-    color: #1a1a1a;
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--texto-suave);
+    margin-top: -10px;
+    margin-bottom: 25px;
 }
 
 h3 {
     margin-top: 35px;
     margin-bottom: 15px;
     font-size: 1.3rem;
-    border-bottom: 2px solid #8c8c8c;
-    padding-bottom: 5px;
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 8px;
 }
 
+p {
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+/*FOTO DE PERFIL*/
 .foto-perfil {
-    width: 200px;       
-    height: 200px;      
+    width: 180px;       
+    height: 180px;      
     border-radius: 50%; 
     object-fit: cover;  
     display: block;
     margin: 20px auto;  
-    border: 4px solid #1a1a1a;
+    border: 3px solid var(--cor-destaque);
+    box-shadow: 0 0 25px rgba(38, 50, 212, 0.4);
 }
 
-/*CABEÇALHO E MENU DE NAVEGAÇÃO*/
+/*CABEÇALHO E NAVEGAÇÃO*/
 .cabecalho {
     background-color: #1a1a1a;
     width: 100%;
-    padding: 15px 0;
+    padding: 20px 0;
     margin: 0 0 30px 0;
 }
 
@@ -78,7 +95,7 @@ h3 {
     list-style: none;
     display: flex; 
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     padding: 0;
     margin: 0;
 }
@@ -87,83 +104,189 @@ h3 {
     text-decoration: none;
     color: var(--cor-texto);
     font-weight: 500;
-    font-size: 1rem;
-    transition: color var(--transicao-padrao);
+    font-size: 0.95rem;
+    background-color: var(--cor-destaque);
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: background-color var(--transicao-padrao), transform var(--transicao-padrao), border-color var(--transicao-padrao);
 }
 
 .menu-navegacao a:hover {
-    color: var(--cor-destaque);
+    color: #ffffff;
+    background-color: #1e26a3;
+    border-color: #404acf;
+    transform: translateY(-2px);
+}
+
+/*ESTILO DAS TAGS DE HABILIDADES*/
+.container-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill-tag {
+    background-color: #1a1a1a;
+    color: var(--cor-texto);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border: 1px solid var(--cor-borda);
+    transition: transform var(--transicao-padrao), border-color var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.skill-tag:hover {
+    border-color: var(--cor-destaque);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(38, 50, 212, 0.4);
+}
+
+/*BOTÃO DE DOWNLOAD DO CURRÍCULO*/
+.btn-cv {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-destaque);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
+}
+
+.btn-cv:hover {
+    background-color: var(--cor-destaque);
+    transform: translateY(-2px);
+}
+
+.centralizado {
+    text-align: center;
 }
 
 /*PROJETOS*/
 .card-projeto {
     background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
+    color: var(--cor-texto);
+    padding: 24px;
+    border-radius: var(--raio-padrao);
     margin-top: 20px;
+    border: 1px solid var(--cor-borda);
+    transition: border-color var(--transicao-padrao), transform var(--transicao-padrao);
+}
+
+.card-projeto:hover {
+    border-color: var(--cor-destaque);
+    transform: translateY(-2px);
 }
 
 .card-projeto h3 {
-    color: #ffffff;
+    color: var(--cor-texto);
     border-bottom: none;
     margin-top: 0;
 }
 
 .card-projeto a {
     display: inline-block;
-    margin-top: 10px;
-    padding: 12px 24px;
+    margin-top: 12px;
+    padding: 10px 20px;
     background-color: var(--cor-destaque);
-    color: #ffffff;
+    color: var(--cor-texto);
     text-decoration: none;
     border-radius: var(--raio-padrao);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
 }
 
 .card-projeto a:hover {
-    background-color: #2b3399;
+    background-color: #1e26a3;
     transform: translateY(-2px);
+}
+
+/*ESTILO DOS CARDS COM ALINHAMENTO NAS EXTREMIDADES*/
+.card-item {
+    background-color: #1a1a1a;
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid var(--cor-borda);
+    
+    /* Alinha o texto na esquerda e a badge na direita */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    
+    transition: transform var(--transicao-padrao), border-color var(--transicao-padrao);
+}
+
+.card-item:hover {
+    border-color: var(--cor-destaque);
+    transform: translateY(-2px);
+}
+
+/*ESTILO DAS PÍLULAS/BADGES DE STATUS*/
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 12px;
+    white-space: nowrap; /* Impede a palavra de quebrar em duas linhas */
+}
+
+.badge-cursando {
+    background-color: #4a3800;
+    color: #ffca28;
+}
+
+.badge-concluido {
+    background-color: #1e4620;
+    color: #4caf50;
 }
 
 /*BOTÃO DE VOLTAR*/
 .btn-voltar {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 24px;
+    padding: 10px 20px;
     background-color: var(--cor-destaque);
-    color: #ffffff !important;
+    color: var(--cor-texto) !important;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     border-radius: var(--raio-padrao);
     transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
 }
 
 .btn-voltar:hover {
-    background-color: #2b3399;
+    background-color: #1e26a3;
     transform: translateY(-2px);
 }
 
 /*FORMULÁRIO DE CONTATO*/
 .formulario-contato {
     background-color: #1a1a1a;
-    color: #ffffff;
+    color: var(--cor-texto);
     padding: 30px;
     border-radius: var(--raio-padrao);
     max-width: 500px;
     margin-top: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .formulario-contato label {
     font-weight: 500;
     font-size: 0.95rem;
-    color: #ffffff;
+    color: var(--cor-texto);
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .formulario-contato input[type="text"],
@@ -173,8 +296,8 @@ h3 {
     padding: 10px 14px;
     border: 1px solid var(--cor-borda);
     border-radius: 6px;
-    background-color: #0d0d0d;
-    color: #ffffff;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     font-family: inherit;
     font-size: 0.95rem;
     outline: none;
@@ -184,14 +307,14 @@ h3 {
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
     border-color: var(--cor-destaque);
-    box-shadow: 0 0 0 2px rgba(64, 74, 207, 0.3);
+    box-shadow: 0 0 0 2px rgba(38, 50, 212, 0.3);
 }
 
 .formulario-contato button {
     width: 100%;
     padding: 12px;
     background-color: var(--cor-destaque);
-    color: #ffffff;
+    color: var(--cor-texto);
     border: none;
     border-radius: 6px;
     font-size: 1rem;
@@ -201,7 +324,7 @@ h3 {
 }
 
 .formulario-contato button:hover {
-    background-color: #2b3399;
+    background-color: #1e26a3;
     transform: translateY(-2px);
 }
 
@@ -213,7 +336,7 @@ h3 {
     gap: 30px;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-top: 1px solid var(--cor-borda);
 }
 
 .link-social {
@@ -221,7 +344,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #1a1a1a;
+    color: var(--cor-texto);
     font-weight: 500;
     transition: transform var(--transicao-padrao), color var(--transicao-padrao);
 }
@@ -229,6 +352,7 @@ h3 {
 .link-social p {
     margin: 6px 0 0 0;
     font-size: 0.85rem;
+    color: var(--texto-suave);
 }
 
 .icone-rede-social {
@@ -236,6 +360,13 @@ h3 {
     height: 40px;
     object-fit: contain;
     border-radius: 8px;
+    border: 2px solid var(--cor-borda);
+    transition: border-color var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.link-social:hover .icone-rede-social {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 12px rgba(38, 50, 212, 0.5);
 }
 
 .link-social:hover {
@@ -243,22 +374,7 @@ h3 {
     color: var(--cor-destaque);
 }
 
-/*AJUSTE PARA TELAS MENORES/CELULARES*/
-@media (max-width: 600px) {
-    .conteudo {
-        padding: 0 20px 30px 20px;
-    }
-
-    .menu-navegacao {
-        gap: 15px;
-    }
-
-    #rodape-social {
-        gap: 15px;
-    }
-}
-
-/*ALINHAMENTO DO CONTEÚDO ABAIXO DAS REDES*/
+/*RODAPÉ INFERIOR*/
 .rodape-inferior {
     display: flex;
     flex-direction: column;
@@ -271,25 +387,40 @@ h3 {
 
 .rodape-inferior p {
     margin: 0;
-    color: #1a1a1a;
-    font-size: 0.95rem;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
 }
 
-/*PERSONALIZAÇÃO APENAS DO BOTÃO VOLTAR AO TOPO*/
+/*BOTÃO VOLTAR AO TOPO*/
 .btn-topo {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 20px;
     background-color: var(--cor-destaque);
-    color: #ffffff !important;
+    color: var(--cor-texto) !important;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border-radius: 20px;
     transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
 }
 
 .btn-topo:hover {
-    background-color: #2b3399;
+    background-color: #1e26a3;
     transform: translateY(-2px);
+}
+
+/*RESPONSIVIDADE*/
+@media (max-width: 600px) {
+    .conteudo {
+        padding: 0 20px 30px 20px;
+    }
+
+    .menu-navegacao {
+        gap: 10px;
+    }
+
+    #rodape-social {
+        gap: 15px;
+    }
 }
