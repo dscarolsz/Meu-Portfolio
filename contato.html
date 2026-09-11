@@ -24,7 +24,7 @@
         <div class="conteudo">
             <main>
                 <h1>ENTRE EM CONTATO 👩🏻‍💻</h1>
-                <p>Envie um E-mail ou fale comigo pelas redes sociais!</p>
+                <p>Envie uma mensagem abaixo ou fale comigo pelas redes sociais!</p>
 
                 <div class="card-whatsapp">
                     <span>Prefere uma conversa rápida?</span>
@@ -36,19 +36,35 @@
                     </a>
                 </div>
 
-                <br>
-
-                <!-- Botão de e-mail direto -->
-                <div class="card-whatsapp">
-                    <span>Prefere enviar um e-mail?</span>
-                    <a href="mailto:shiftalone99@gmail.com?subject=Contato%20do%20Portfolio" class="btn-whatsapp">
-                        ✉️ Enviar E-mail Direto
-                    </a>
-                </div>
+                <form id="formularioContato" class="formulario-contato">
+                    <div>
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+                    </div>
+                    <br>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
             </main>
         </div>
 
     </div>
+
+    <script>
+        document.getElementById('formularioContato').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = "agradecimento.html";
+        });
+    </script>
 
 </body>
 </html>
