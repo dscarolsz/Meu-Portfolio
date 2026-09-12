@@ -35,7 +35,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: #161616; /* Tom escuro para harmonizar com o layout */
+    background-color: #161616;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
     color: var(--cor-texto);
 }
@@ -168,6 +168,12 @@ p {
     text-align: center;
 }
 
+li{
+    margin-bottom: 20px;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 /*PROJETOS*/
 .card-projeto {
     background-color: #1a1a1a;
@@ -206,48 +212,6 @@ p {
 .card-projeto a:hover {
     background-color: #1e26a3;
     transform: translateY(-2px);
-}
-
-/*ESTILO DOS CARDS COM ALINHAMENTO NAS EXTREMIDADES*/
-.card-item {
-    background-color: #1a1a1a;
-    padding: 14px 20px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 1px solid var(--cor-borda);
-    
-    /* Alinha o texto na esquerda e a badge na direita */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    
-    transition: transform var(--transicao-padrao), border-color var(--transicao-padrao);
-}
-
-.card-item:hover {
-    border-color: var(--cor-destaque);
-    transform: translateY(-2px);
-}
-
-/*ESTILO DAS PÍLULAS/BADGES DE STATUS*/
-.badge {
-    display: inline-block;
-    padding: 4px 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    border-radius: 12px;
-    white-space: nowrap; /* Impede a palavra de quebrar em duas linhas */
-}
-
-.badge-cursando {
-    background-color: #4a3800;
-    color: #ffca28;
-}
-
-.badge-concluido {
-    background-color: #1e4620;
-    color: #4caf50;
 }
 
 /*BOTÃO DE VOLTAR*/
@@ -366,14 +330,6 @@ p {
     transform: translateY(-2px);
 }
 
-/*RESPONSIVIDADE PARA TELAS MENORES*/
-@media (max-width: 500px) {
-    .card-whatsapp {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
 /*RODAPÉ SOCIAL*/
 #rodape-social {
     display: flex;
@@ -468,5 +424,10 @@ p {
 
     #rodape-social {
         gap: 15px;
+    }
+    
+    .card-whatsapp {
+        flex-direction: column;
+        text-align: center;
     }
 }
