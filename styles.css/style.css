@@ -340,11 +340,12 @@ li{
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
 }
 
 .btn-email:hover {
   background-color: #d93025;
+  transform: translateY(-2px);
 }
 
 /*RODAPÉ SOCIAL*/
@@ -446,5 +447,10 @@ li{
     .card-whatsapp {
         flex-direction: column;
         text-align: center;
+    }
+
+    .btn-whatsapp,
+    .btn-email {
+        white-space: nowrap;
     }
 }
